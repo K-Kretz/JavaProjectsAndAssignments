@@ -2,8 +2,6 @@
  * ASSIGNMENT 1: ONE KEY
  * 
  * In this assignment, you will put together the CaesarCipher class from the lesson and add a decrypt method to decrypt with the same key. 
- * In addition you will create a second class, TestCaesarCipher to test examples that use the CaesarCipher class, including writing a method 
- * that will automatically decrypt an encrypted file by determining the key and then decrypting with that key.
  * 
  * Developer: Keith Kretz
  * Date Created: 6/19/2024
@@ -31,11 +29,11 @@ public class CaesarCipher {
 	
 	public String encrypt(String input) {
 		
-		StringBuilder sb = new StringBuilder(input);
+		StringBuilder sb = new StringBuilder(input.toLowerCase());
 		
 		for(int i=0; i <input.length(); i++)
 		{
-			char letter = input.charAt(i);
+			char letter = sb.charAt(i);
 			
 			int index = alphabet.indexOf(letter);
 			
@@ -53,9 +51,6 @@ public class CaesarCipher {
 		return cc.encrypt(input);
 	}
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 	
 		CaesarCipher cc1 = new CaesarCipher(17);
