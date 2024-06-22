@@ -5,7 +5,7 @@
  * 
  * Developer: Keith Kretz
  * Date Created: 6/19/2024
- * Last Updated: 6/19/2024
+ * Last Updated: 6/20/2024
  * 
  */
 package com.secure.util;
@@ -53,10 +53,10 @@ public class CaesarCipher {
 
 	public static void main(String[] args) {
 	
-		CaesarCipher cc1 = new CaesarCipher(17);
+		CaesarCipher cc1 = new CaesarCipher(15);
 		
 
-		String test1 = cc1.encrypt("This is a Test");
+		String test1 = cc1.encrypt("Can you imagine life WITHOUT the internet AND computers in your pocket?");
 		System.out.println(test1);
 		
 		System.out.println(cc1.decrypt(test1));
