@@ -37,7 +37,7 @@ public class WorkingWithChrome {
 		
 		String titleOfPage = driver.getTitle();
 		
-		System.out.println("Title of The Page -" + titleOfPage);
+		System.out.println("Title of The Page - " + titleOfPage);
 	}
 	
 	public void closeBrowser() {
