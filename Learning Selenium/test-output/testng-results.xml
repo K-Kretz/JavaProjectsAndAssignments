@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-23T17:29:23 EDT" name="Default suite" finished-at="2024-06-23T17:29:31 EDT" duration-ms="8098">
+  <suite started-at="2024-06-23T17:50:18 EDT" name="Default suite" finished-at="2024-06-23T17:50:36 EDT" duration-ms="17760">
     <groups>
     </groups>
-    <test started-at="2024-06-23T17:29:23 EDT" name="Default test" finished-at="2024-06-23T17:29:31 EDT" duration-ms="8098">
+    <test started-at="2024-06-23T17:50:18 EDT" name="Default test" finished-at="2024-06-23T17:50:36 EDT" duration-ms="17760">
       <class name="guru99Application.Guru99ApplicationTest">
-        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:guru99Application.Guru99ApplicationTest@712625fd]" started-at="2024-06-23T17:29:23 EDT" name="invokeBrowser" finished-at="2024-06-23T17:29:31 EDT" duration-ms="8052" status="PASS">
+        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:guru99Application.Guru99ApplicationTest@7bba5817]" started-at="2024-06-23T17:50:18 EDT" name="invokeBrowser" finished-at="2024-06-23T17:50:27 EDT" duration-ms="8462" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeBrowser -->
-        <test-method signature="verifyTitleOfThePage()[pri:0, instance:guru99Application.Guru99ApplicationTest@712625fd]" started-at="2024-06-23T17:29:31 EDT" name="verifyTitleOfThePage" finished-at="2024-06-23T17:29:31 EDT" duration-ms="14" status="PASS">
+        <test-method signature="verifyTitleOfThePage()[pri:0, instance:guru99Application.Guru99ApplicationTest@7bba5817]" started-at="2024-06-23T17:50:27 EDT" name="verifyTitleOfThePage" finished-at="2024-06-23T17:50:27 EDT" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyTitleOfThePage -->
+        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:guru99Application.Guru99ApplicationTest@7bba5817]" started-at="2024-06-23T17:50:27 EDT" name="invokeBrowser" finished-at="2024-06-23T17:50:35 EDT" duration-ms="8034" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invokeBrowser -->
+        <test-method signature="verifyLogin()[pri:1, instance:guru99Application.Guru99ApplicationTest@7bba5817]" started-at="2024-06-23T17:50:35 EDT" name="verifyLogin" finished-at="2024-06-23T17:50:36 EDT" duration-ms="1217" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
       </class> <!-- guru99Application.Guru99ApplicationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
