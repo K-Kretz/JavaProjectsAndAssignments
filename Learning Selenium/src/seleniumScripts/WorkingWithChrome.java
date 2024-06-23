@@ -32,5 +32,12 @@ public class WorkingWithChrome {
 		driver.get(url);
 		
 	}
+	
+	public void getTitle() {
+		
+		String titleOfPage = driver.getTitle();
+		
+		System.out.println("Title of The Page -" + titleOfPage);
+	}
 
 }
