@@ -19,7 +19,7 @@ public class WorkingWithChrome {
 	
 	private ChromeDriver driver;
 	
-	private String url = "http://twitch.tv";
+	private String url = "http://demo.guru99.com/v4";
 	
 	public void invokeBrowser() {
 		
@@ -42,9 +42,9 @@ public class WorkingWithChrome {
 	
 	public void closeBrowser() {
 		
-		//driver.close();
+		driver.close();
 		
-		driver.quit();
+		//driver.quit();
 	}
 	
 	public static void main(String[] args) {
