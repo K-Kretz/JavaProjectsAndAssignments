@@ -47,5 +47,15 @@ public class WorkingWithChrome {
 		driver.quit();
 	}
 	
+	public static void main(String[] args) {
+		
+		WorkingWithChrome wc = new WorkingWithChrome();
+		
+		wc.invokeBrowser();
+		
+		wc.getTitle();
+		
+		wc.closeBrowser();
+	}
 
 }
