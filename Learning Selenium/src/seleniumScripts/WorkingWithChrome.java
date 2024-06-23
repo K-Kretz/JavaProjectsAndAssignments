@@ -39,5 +39,13 @@ public class WorkingWithChrome {
 		
 		System.out.println("Title of The Page -" + titleOfPage);
 	}
+	
+	public void closeBrowser() {
+		
+		//driver.close();
+		
+		driver.quit();
+	}
+	
 
 }
