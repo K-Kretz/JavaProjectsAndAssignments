@@ -1,7 +1,9 @@
 /**
- * EXAMPLE 1: WordFrequencies
+ * ASSIGNMENT 1: WordFrequencies
  * 
- * Using ArrayLists to count the Frequencies of words in a text file
+ * write a program to determine the word that occurs the most often in a file. 
+ * If more than one word occurs as the most often, then return the first such word found. 
+ * You should make all words lowercase before counting them. 
  * 
  * Developer: Keith Kretz
  * Date Created: 6/25/2024
@@ -26,7 +28,8 @@ public class WordFrequencies {
 	}
 	
 	public void findUnique() throws IOException {
-		
+		myWords.clear();
+		myFreqs.clear();
 
 		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\examples\\TestFile.txt"));
 		
@@ -55,12 +58,33 @@ public class WordFrequencies {
 		}
 	}
 	
+	public int findIndexOfMax() {
+		
+		int maxIndex=0;
+		int maxValue=0;
+		 for(int i=0; i<myWords.size(); i++)
+		 {
+			 if(myFreqs.get(i) > maxValue)
+			 {
+				maxValue = myFreqs.get(i);
+			 	maxIndex = i;
+			 }
+		 }
+		
+		return maxIndex;		
+	}
+	
 	public void tester() throws IOException{
 		
 		findUnique();
 		System.out.println("Unique Words: " + myWords.size());
+		
+		System.out.println("Most common word: " + myWords.get(findIndexOfMax()) + " - " + myFreqs.get(findIndexOfMax()));
+		
+		
 		for(int i=0; i<myWords.size(); i++)
 		{
+			if(myFreqs.get(i) >1)
 			System.out.println(myFreqs.get(i) + "\t" + myWords.get(i));
 		}
 	}
