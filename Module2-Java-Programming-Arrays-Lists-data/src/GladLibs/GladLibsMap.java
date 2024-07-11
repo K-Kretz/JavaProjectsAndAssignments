@@ -1,11 +1,11 @@
 /**
- * EXAMPLE 1: GladLibs
+ * EXAMPLE 3: GladLibsMap
  * 
- * Improving an already made program with slight modifications.
+ * Improve the GladLibs class to use HashMaps.
  * 
  * Developer: Keith Kretz
- * Date Created: 7/3/2024
- * Last Updated: 7/8/2024
+ * Date Created: 7/9/2024
+ * Last Updated: 7/9/2024
  */
 package GladLibs;
 
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
-public class GladLib {
+public class GladLibsMap {
 	
 	
 	
@@ -38,12 +38,12 @@ public class GladLib {
 	private static String dataSourceURL = "http://dukelearntoprogram.com/course3/data";
 	private static String dataSourceDirectory = "C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\GladLibs\\data";
 	
-	public GladLib() throws IOException{
+	public GladLibsMap() throws IOException{
 		initializeFromSource(dataSourceDirectory);
 		myRandom = new Random();
 	}
 	
-	public GladLib(String source) throws IOException{
+	public GladLibsMap(String source) throws IOException{
 		initializeFromSource(source);
 		myRandom = new Random();
 	}
@@ -221,7 +221,7 @@ public class GladLib {
 	
 	public static void main(String[] args) throws IOException {
 		
-		GladLib gl = new GladLib();
+		GladLibsMap gl = new GladLibsMap();
 
 		gl.makeStory();
 	}
