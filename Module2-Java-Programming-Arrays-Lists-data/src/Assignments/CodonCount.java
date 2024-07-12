@@ -9,7 +9,7 @@
  * Date Created: 7/9/2024
  * Last Updated: 7/9/2024
  */
-package examples;
+package Assignments;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -90,7 +90,7 @@ public class CodonCount {
 	
 	public void testerCodonMap() throws IOException {
 
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\examples\\dna.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\Assignments\\dna.txt"));
 		
 		String line = br.readLine();
 
