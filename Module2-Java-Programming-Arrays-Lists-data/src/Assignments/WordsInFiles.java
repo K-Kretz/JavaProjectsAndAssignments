@@ -77,12 +77,7 @@ public class WordsInFiles {
 		
 		JFrame frame = new JFrame();
 
-		DirectoryResource(frame);
-	    
-
-		//addWordsFromFile(files[i]);
-
-		
+		DirectoryResource(frame);	
 		
 	}
 	
@@ -102,6 +97,47 @@ public class WordsInFiles {
         } 
 	}
 	
+	public int maxNumbers() {
+		
+		int maxWordInFiles = 0;
+		
+		for(String word : wordsInFile.keySet())
+		{
+			if(wordsInFile.get(word).size() > maxWordInFiles)
+			{
+				maxWordInFiles = wordsInFile.get(word).size();
+			}
+		}
+		
+		return maxWordInFiles;
+	}
+	public ArrayList<String> wordsInNumFiles(int number){
+		
+		ArrayList<String> words = new ArrayList<String>();
+		
+		for(String word : wordsInFile.keySet())
+		{
+			if(wordsInFile.get(word).size() == number)
+			{
+				words.add(word);
+			}
+		}
+		return words;
+	}
+	
+	public void printFilesIn(String word) {
+		
+		if(wordsInFile.containsKey(word))
+		{
+			for(int i=0; i<wordsInFile.get(word).size(); i++)
+			{
+				System.out.println(wordsInFile.get(word).get(i));
+			}
+		}
+	
+	}
+	
+	
 	
 	
 	
@@ -110,7 +146,16 @@ public class WordsInFiles {
 		WordsInFiles wif = new WordsInFiles();
 		
 		wif.buildWordFileMap();
-
+		
+		System.out.println(wif.maxNumbers());
+		System.out.println(wif.wordsInNumFiles(3));
+		wif.printFilesIn("cats");
+		
+//		for(String word : wordsInFile.keySet())
+//		{
+//			System.out.println(word);
+//			System.out.println(wordsInFile.get(word).toString());
+//		}
 	}
 
 }
