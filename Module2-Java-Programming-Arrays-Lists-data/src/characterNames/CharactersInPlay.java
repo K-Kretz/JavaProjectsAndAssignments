@@ -1,13 +1,17 @@
 /**
  * ASSIGNMENT 2: WordFrequencies
  * 
- * Write a program to determine the characters in one of Shakespeare’s plays that have the most speaking parts. 
+ * CharactersInPlay Description.
+ * The program determines the characters in one of 
+ * Shakespeare's plays that have the most speaking parts.
+ * Consider the play "The tragedy of Macabeth" in the file
+ * macabethSmall.txt
  * 
  * Developer: Keith Kretz
  * Date Created: 6/28/2024
  * Last Updated: 6/28/2024
  */
-package examples;
+package characterNames;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -45,7 +49,7 @@ public class CharactersInPlay {
 		myCharacters.clear();
 		myCount.clear();
 		
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\examples\\TestFile.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\GladLibs\\data\\errors.txt"));
 		
 		String line;
 		String[] periods;
@@ -90,11 +94,11 @@ public class CharactersInPlay {
 		
 	}
 
-	public static void main(String[] args) throws IOException {
-		CharactersInPlay cip = new CharactersInPlay();
-		
-		cip.tester();
-
-	}
+//	public static void main(String[] args) throws IOException {
+//		CharactersInPlay cip = new CharactersInPlay();
+//		
+//		cip.tester();
+//
+//	}
 
 }

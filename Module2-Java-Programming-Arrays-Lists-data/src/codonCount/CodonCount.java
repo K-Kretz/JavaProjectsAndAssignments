@@ -9,7 +9,7 @@
  * Date Created: 7/9/2024
  * Last Updated: 7/11/2024
  */
-package Assignments;
+package codonCount;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -46,8 +46,8 @@ public class CodonCount {
 				}
 			}
 		}
-		int thisStart = 1;
-		int thisEnd = 5;
+		int thisStart = 6;
+		int thisEnd = 7;
 		
 		String commonCodon = getMostCodon();
 
@@ -90,7 +90,7 @@ public class CodonCount {
 	
 	public void testerCodonMap() throws IOException {
 
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\Assignments\\dna.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\GladLibs\\data\\dnaMystery2.txt"));
 		
 		String line = br.readLine();
 
@@ -106,12 +106,11 @@ public class CodonCount {
 	}
 		
 
-	
-	public static void main(String[] args) throws IOException {
-		CodonCount cc = new CodonCount();
-		
-		cc.testerCodonMap();
-
-	}
+//	public static void main(String[] args) throws IOException {
+//		CodonCount cc = new CodonCount();
+//		
+//		cc.testerCodonMap();
+//
+//	}
 
 }

@@ -1,7 +1,8 @@
 /**
  * EXAMPLE 1: GladLibs
  * 
- * Improving an already made program with slight modifications.
+ * Improving an already made program with slight modifications. Generates a story from undefined categories of words list
+ * in parts of the story surrounded by <>.
  * 
  * Developer: Keith Kretz
  * Date Created: 7/3/2024
@@ -219,11 +220,11 @@ public class GladLib {
 	
 	
 	
-	public static void main(String[] args) throws IOException {
-		
-		GladLib gl = new GladLib();
-
-		gl.makeStory();
-	}
+//	public static void main(String[] args) throws IOException {
+//		
+//		GladLib gl = new GladLib();
+//
+//		gl.makeStory();
+//	}
 
 }

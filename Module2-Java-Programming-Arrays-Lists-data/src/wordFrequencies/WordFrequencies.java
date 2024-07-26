@@ -9,7 +9,7 @@
  * Date Created: 6/25/2024
  * Last Updated: 6/25/2024
  */
-package examples;
+package wordFrequencies;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -31,7 +31,7 @@ public class WordFrequencies {
 		myWords.clear();
 		myFreqs.clear();
 
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\examples\\TestFile.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\GladLibs\\data\\errors.txt"));
 		
 		String line;
 		
@@ -89,15 +89,10 @@ public class WordFrequencies {
 		}
 	}
 
-	public static void main(String[] args) {
-		
-		WordFrequencies wf = new WordFrequencies();
-		
-		try {
-			wf.tester();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	public static void main(String[] args) throws IOException {
+//		
+//		WordFrequencies wf = new WordFrequencies();
+//		
+//		wf.tester();
+//	}
 }

@@ -8,7 +8,7 @@
  * Date Created: 7/22/2024
  * Last Updated: 7/22/2024 
  */
-package Assignments;
+package gladLibsMap;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -33,6 +33,7 @@ public class GladLibsMap {
 //	private ArrayList<String> verbList;
 //	private ArrayList<String> fruitList;
 	private ArrayList<String> usedWords;
+	private ArrayList<String> categoriesUsed;
 	
 	private Random myRandom;
 	
@@ -40,9 +41,13 @@ public class GladLibsMap {
 	private static String dataSourceDirectory = "C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\GladLibs\\data";
 	
 	public GladLibsMap() throws IOException{
+		
+		usedWords = new ArrayList<String>();
 		myMap = new HashMap<String, ArrayList<String>>();
-		initializeFromSource(dataSourceDirectory);
 		myRandom = new Random();
+		categoriesUsed = new ArrayList<String>();
+		
+		initializeFromSource(dataSourceDirectory);
 	}
 	
 	public GladLibsMap(String source) throws IOException{
@@ -57,7 +62,6 @@ public class GladLibsMap {
 		{
 			myMap.put(categories[i], readIt(source+"\\"+categories[i]+".txt"));
 		}
-		usedWords = new ArrayList<String>();
 	}
 	
 	private String randomFrom(ArrayList<String> source){
@@ -67,6 +71,10 @@ public class GladLibsMap {
 	
 	private String getSubstitute(String label) {
 		if (myMap.containsKey(label)) {
+			if(!categoriesUsed.contains(label))
+			{
+				categoriesUsed.add(label);
+			}
 			return randomFrom(myMap.get(label));
 		}
 		if (label.equals("number")){
@@ -165,7 +173,6 @@ public class GladLibsMap {
 		}
 		else 
 		{
-			System.out.println(source);
 			BufferedReader br = new BufferedReader(new FileReader(source));
 			
 			String line;
@@ -180,20 +187,48 @@ public class GladLibsMap {
 	
 	public void makeStory() throws IOException{
 	    System.out.println("\n");
-		String story = fromTemplate("C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\GladLibs\\data\\madtemplate2.txt");
+		String story = fromTemplate("C:\\Users\\keith\\git\\repository\\Module2-Java-Programming-Arrays-Lists-data\\src\\GladLibs\\data\\dnaMystery1.txt");
 		printOut(story, 60);
 		
-		System.out.println("\n");
-		for (int i=0; i<usedWords.size(); i++) {
-			System.out.println(usedWords.get(i));
-		}
+		 System.out.println("\n");
 		
-		System.out.println(usedWords.size());
+		System.out.println(totalWordsInMap());
+		
+		System.out.println(totalWordsConsidered());
+		
+//		System.out.println("\n");
+//		for (int i=0; i<usedWords.size(); i++) {
+//			System.out.println(usedWords.get(i));
+//		}
+//		
+//		
+//		System.out.println(usedWords.size());
 	}
 	
-	
+	public int totalWordsInMap() {
+		
+		int totalWords=0;
+		
+		for(String word : myMap.keySet())
+		{
+			totalWords += myMap.get(word).size();
+		}
+		
+		return totalWords;
+	}
 
 
+	public int totalWordsConsidered() {
+		
+		int totalWords=0;
+
+		for(int i=0; i< categoriesUsed.size(); i++) 
+		{
+			totalWords += myMap.get(categoriesUsed.get(i)).size();
+		}
+		
+		return totalWords;
+	}
 	
 	
 	
