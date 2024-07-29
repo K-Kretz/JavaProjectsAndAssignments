@@ -14,8 +14,8 @@ import org.junit.Test;
  * Test Class for ReadingLogFiles
  * 
  * Developer: Keith Kretz
- * Date Created: 6/28/2024
- * Last Updated: 6/28/2024
+ * Date Created: 7/28/2024
+ * Last Updated: 7/28/2024
  */
 public class LogEntryTest {
     /**
