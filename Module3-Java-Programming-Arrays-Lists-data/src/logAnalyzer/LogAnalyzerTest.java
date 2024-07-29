@@ -31,11 +31,19 @@ public class LogAnalyzerTest {
      */
     
     @Test
-    public void mainTest() throws IOException{
+    public void mainTest1() throws IOException{
          LogAnalyzer la = new LogAnalyzer();
          la.readFile("short-test_log");
          la.printAll();
         
+    }
+    
+    @Test
+    public void mainTest2() throws IOException {
+    	LogAnalyzer la = new LogAnalyzer();
+        la.readFile("short-test_log");
+        System.out.println(la.countUniqueIPs());
+    	
     }
 
     /**

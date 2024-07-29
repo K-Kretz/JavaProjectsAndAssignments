@@ -42,5 +42,22 @@ public class LogAnalyzer {
 		}
 	}
 	
+	public int countUniqueIPs() {
+		
+		ArrayList<String> visitedIPAddress = new ArrayList<String>();
+		
+		for(LogEntry le : records)
+		{
+			String ipAddr = le.getIpAddress();
+			
+			if(!visitedIPAddress.contains(ipAddr))
+			{
+				visitedIPAddress.add(ipAddr);	
+			}
+		}
+		
+		return visitedIPAddress.size();	
+	}
+	
 
 }
