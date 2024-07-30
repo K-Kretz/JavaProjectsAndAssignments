@@ -70,7 +70,7 @@ public class LogAnalyzer {
 			int status = le.getStatusCode();
 			if(status > num)
 			{
-				System.out.println(le);
+				System.out.println("StatusCode greater than "+num+": "+status);
 			}
 			
 		}
@@ -100,6 +100,7 @@ public class LogAnalyzer {
 		return IPDates;		
 	}
 
+	//This method returns the number of unique IP addresses in records that have a status code in the range from low to high, inclusive.
 	public int countUniqueIPsInRange(int low, int high) {
 		
 		int count=0;

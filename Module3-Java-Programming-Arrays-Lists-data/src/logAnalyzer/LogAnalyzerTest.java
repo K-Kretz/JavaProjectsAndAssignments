@@ -34,6 +34,7 @@ public class LogAnalyzerTest {
     public void mainTest1() throws IOException{
          LogAnalyzer la = new LogAnalyzer();
          la.readFile("short-test_log");
+         System.out.println("mainTest1()");
          la.printAll();
         
     }
@@ -42,6 +43,7 @@ public class LogAnalyzerTest {
     public void mainTest2() throws IOException {
     	LogAnalyzer la = new LogAnalyzer();
         la.readFile("short-test_log");
+        System.out.println("mainTest2()");
         System.out.println(la.countUniqueIPs());
     	
     }
@@ -49,24 +51,27 @@ public class LogAnalyzerTest {
     @Test
     public void mainTest3() throws IOException {
     	LogAnalyzer la = new LogAnalyzer();
-        la.readFile("short-test_log");
-        la.printAllHigherThanNum(302);
+        la.readFile("weblog1_log");
+        System.out.println("mainTest3()");
+        la.printAllHigherThanNum(400);
     	
     }
     
     @Test
     public void mainTest4() throws IOException {
     	LogAnalyzer la = new LogAnalyzer();
-        la.readFile("weblog-short_log");
-        System.out.println(la.uniqueIPVisitsOnDay("Sep 30").size());
+        la.readFile("weblog1_log");
+        System.out.println("mainTest4()");
+        System.out.println(la.uniqueIPVisitsOnDay("Mar 24").size());
     	
     }
     
     @Test
     public void mainTest5() throws IOException {
     	LogAnalyzer la = new LogAnalyzer();
-        la.readFile("short-test_log");
-        System.out.println(la.countUniqueIPsInRange(300,399));
+        la.readFile("weblog1_log");
+        System.out.println("mainTest5()");
+        System.out.println(la.countUniqueIPsInRange(200,299));
     	
     }
 
