@@ -58,6 +58,19 @@ public class LogAnalyzer {
 		
 		return visitedIPAddress.size();	
 	}
+	public void printAllHigherThanNum(int num) {
+		
+		for(LogEntry le : records)
+		{
+			int status = le.getStatusCode();
+			if(status > num)
+			{
+				System.out.println(le);
+			}
+			
+		}
+		
+	}
 	
 
 }

@@ -45,6 +45,14 @@ public class LogAnalyzerTest {
         System.out.println(la.countUniqueIPs());
     	
     }
+    
+    @Test
+    public void mainTest3() throws IOException {
+    	LogAnalyzer la = new LogAnalyzer();
+        la.readFile("short-test_log");
+        la.printAllHigherThanNum(302);
+    	
+    }
 
     /**
      * Tears down the test fixture.
