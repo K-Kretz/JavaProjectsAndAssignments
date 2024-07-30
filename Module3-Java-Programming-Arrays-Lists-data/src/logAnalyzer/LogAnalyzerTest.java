@@ -87,6 +87,17 @@ public class LogAnalyzerTest {
         {
         	System.out.println("IP address: " + key + " has "+myCounts.get(key)+" visits");
         }
+    }
+    
+    @Test
+    public void mainTest7() throws IOException {
+    	LogAnalyzer la = new LogAnalyzer();
+        la.readFile("weblog3-short_log");
+        System.out.println("mainTest7()");
+        
+        HashMap<String,Integer> myCounts = la.countVisitsPerIp();
+        
+        System.out.println(la.mostNumberVisitsByIP(myCounts));
     	
     }
 

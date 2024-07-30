@@ -123,6 +123,8 @@ public class LogAnalyzer {
 		return count;
 	}
 	
+	//This method returns a HashMap<String, Integer> that maps an IP address to the number of times that IP address appears in records, 
+	//meaning the number of times this IP address visited the website.
 	public HashMap<String,Integer> countVisitsPerIp(){
 		
 		HashMap<String,Integer> counts = new HashMap<String, Integer>();
@@ -143,6 +145,23 @@ public class LogAnalyzer {
 		}
 		
 		return counts;
+	}
+	
+	//This method returns the maximum number of visits to this website by a single IP address. 
+	public int mostNumberVisitsByIP(HashMap<String,Integer> iPCounts) {
+		
+		int max =0;
+		for(String keyIP: iPCounts.keySet())
+		{
+			int ipCount = iPCounts.get(keyIP);
+			
+			if(ipCount>max)
+			{
+				max = ipCount;
+			}
+		}
+		
+		return max;
 	}
 
 }
