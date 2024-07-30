@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class LogAnalyzer {
@@ -120,6 +121,28 @@ public class LogAnalyzer {
 		}
 		
 		return count;
+	}
+	
+	public HashMap<String,Integer> countVisitsPerIp(){
+		
+		HashMap<String,Integer> counts = new HashMap<String, Integer>();
+		
+		for(LogEntry le: records)
+		{
+			String IP = le.getIpAddress();
+
+			if(!counts.containsKey(IP))
+			{
+				counts.put(IP, 1);
+			}
+			else
+			{
+				counts.put(IP, counts.get(IP)+1);
+			}
+			
+		}
+		
+		return counts;
 	}
 
 }

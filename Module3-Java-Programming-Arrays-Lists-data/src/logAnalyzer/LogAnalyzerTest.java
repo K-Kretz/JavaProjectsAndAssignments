@@ -9,6 +9,7 @@ package logAnalyzer;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
 
 import org.junit.After;
 import org.junit.Before;
@@ -72,6 +73,20 @@ public class LogAnalyzerTest {
         la.readFile("weblog1_log");
         System.out.println("mainTest5()");
         System.out.println(la.countUniqueIPsInRange(200,299));
+    	
+    }
+    
+    @Test
+    public void mainTest6() throws IOException {
+    	LogAnalyzer la = new LogAnalyzer();
+        la.readFile("weblog1_log");
+        System.out.println("mainTest6()");
+        
+        HashMap<String,Integer> myCounts = la.countVisitsPerIp();
+        for(String key: myCounts.keySet())
+        {
+        	System.out.println("IP address: " + key + " has "+myCounts.get(key)+" visits");
+        }
     	
     }
 
