@@ -53,6 +53,22 @@ public class LogAnalyzerTest {
         la.printAllHigherThanNum(302);
     	
     }
+    
+    @Test
+    public void mainTest4() throws IOException {
+    	LogAnalyzer la = new LogAnalyzer();
+        la.readFile("weblog-short_log");
+        System.out.println(la.uniqueIPVisitsOnDay("Sep 30").size());
+    	
+    }
+    
+    @Test
+    public void mainTest5() throws IOException {
+    	LogAnalyzer la = new LogAnalyzer();
+        la.readFile("short-test_log");
+        System.out.println(la.countUniqueIPsInRange(300,399));
+    	
+    }
 
     /**
      * Tears down the test fixture.
