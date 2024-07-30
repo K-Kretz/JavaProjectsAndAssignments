@@ -8,6 +8,7 @@
 package logAnalyzer;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -98,6 +99,20 @@ public class LogAnalyzerTest {
         HashMap<String,Integer> myCounts = la.countVisitsPerIp();
         
         System.out.println(la.mostNumberVisitsByIP(myCounts));
+    	
+    }
+    
+    @Test
+    public void mainTest8() throws IOException {
+    	LogAnalyzer la = new LogAnalyzer();
+        la.readFile("weblog3-short_log");
+        System.out.println("mainTest8()");
+        
+        HashMap<String, ArrayList<String>> datesToIPs = la.iPsForDays();
+        
+        System.out.println(datesToIPs.get("Sep 14").size());
+        System.out.println(datesToIPs.get("Sep 21").size());
+        System.out.println(datesToIPs.get("Sep 30").size());
     	
     }
 

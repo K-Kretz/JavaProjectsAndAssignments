@@ -163,5 +163,33 @@ public class LogAnalyzer {
 		
 		return max;
 	}
+	
+//	This method returns a HashMap<String, ArrayList<String>> that uses records and maps days from web logs to an ArrayList 
+//	of IP addresses that occurred on that day (including repeated IP addresses). A day is in the format “MMM DD” where MMM is 
+//	the first three characters of the month name with the first letter capital and the others in lowercase, and DD is the day 
+//	in two digits (examples are “Dec 05” and “Apr 22”).
+	public HashMap<String, ArrayList<String>> iPsForDays(){
+		
+		HashMap<String, ArrayList<String>> dayToIPsMap = new HashMap<String, ArrayList<String>>();
+		
+		for(LogEntry le: records)
+		{
+			String date = le.getAccessTime().toString().substring(4,10);
+			String ip = le.getIpAddress();
+			
+			if(!dayToIPsMap.containsKey(date))
+			{
+				ArrayList<String> ipList = new ArrayList<String>();
+				dayToIPsMap.put(date, ipList);
+				dayToIPsMap.get(date).add(ip);
+			}
+			else
+			{
+				dayToIPsMap.get(date).add(ip);
+			}
+		}
+		
+		return dayToIPsMap;
+	}
 
 }
