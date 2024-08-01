@@ -147,6 +147,20 @@ public class LogAnalyzer {
 		return counts;
 	}
 	
+	public ArrayList<String> iPsMostVisits(HashMap<String,Integer> addressNumberTime){   
+	    ArrayList<String> maxIps = new ArrayList<String>();    
+	    int greatest = mostNumberVisitsByIP(addressNumberTime);
+	    for (String s: addressNumberTime.keySet()) 
+	    {
+	            if (addressNumberTime.get(s) == greatest) 
+	            {
+	                maxIps.add(s);
+	            }
+	    }
+	    
+	    return maxIps;
+	}
+	
 	//This method returns the maximum number of visits to this website by a single IP address. 
 	public int mostNumberVisitsByIP(HashMap<String,Integer> iPCounts) {
 		
@@ -190,6 +204,44 @@ public class LogAnalyzer {
 		}
 		
 		return dayToIPsMap;
+	}
+	
+	//This method returns the day that has the most IP address visits. If there is a tie, then return any such day.
+	public String dayWithMostIPVisits(HashMap<String, ArrayList<String>> dayToIPsMap) {
+		
+		String dayMost = null;
+		int dayNumMost = 0;
+		
+		for(String key: dayToIPsMap.keySet())
+		{
+			if(dayToIPsMap.get(key).size() > dayNumMost)
+			{
+				dayMost = key;
+				dayNumMost = dayToIPsMap.get(key).size();
+			}
+		}
+		
+		return dayMost;
+	}
+	
+	//This method returns an ArrayList<String> of IP addresses that had the most accesses on the given day.
+	public ArrayList<String> iPsWithMostVisitsOnDay(HashMap<String, ArrayList<String>> dayToIPsMap, String day){
+		
+		HashMap<String,Integer> counts = new HashMap<String,Integer>();
+		
+			for(String ip: dayToIPsMap.get(day))
+			{
+				if(!counts.containsKey(ip))
+				{					
+					counts.put(ip, 1);
+				}
+				else
+				{
+					counts.put(ip, counts.get(ip)+1);
+				}
+			}		
+		
+		return iPsMostVisits(counts);
 	}
 
 }

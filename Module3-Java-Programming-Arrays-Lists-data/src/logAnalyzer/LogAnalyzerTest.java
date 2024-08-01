@@ -44,7 +44,7 @@ public class LogAnalyzerTest {
     @Test
     public void mainTest2() throws IOException {
     	LogAnalyzer la = new LogAnalyzer();
-        la.readFile("short-test_log");
+        la.readFile("weblog2_log");
         System.out.println("mainTest2()");
         System.out.println(la.countUniqueIPs());
     	
@@ -62,18 +62,18 @@ public class LogAnalyzerTest {
     @Test
     public void mainTest4() throws IOException {
     	LogAnalyzer la = new LogAnalyzer();
-        la.readFile("weblog1_log");
+        la.readFile("weblog2_log");
         System.out.println("mainTest4()");
-        System.out.println(la.uniqueIPVisitsOnDay("Mar 24").size());
+        System.out.println(la.uniqueIPVisitsOnDay("Sep 24").size());
     	
     }
     
     @Test
     public void mainTest5() throws IOException {
     	LogAnalyzer la = new LogAnalyzer();
-        la.readFile("weblog1_log");
+        la.readFile("weblog2_log");
         System.out.println("mainTest5()");
-        System.out.println(la.countUniqueIPsInRange(200,299));
+        System.out.println(la.countUniqueIPsInRange(400,499));
     	
     }
     
@@ -93,7 +93,7 @@ public class LogAnalyzerTest {
     @Test
     public void mainTest7() throws IOException {
     	LogAnalyzer la = new LogAnalyzer();
-        la.readFile("weblog3-short_log");
+        la.readFile("weblog2_log");
         System.out.println("mainTest7()");
         
         HashMap<String,Integer> myCounts = la.countVisitsPerIp();
@@ -113,6 +113,35 @@ public class LogAnalyzerTest {
         System.out.println(datesToIPs.get("Sep 14").size());
         System.out.println(datesToIPs.get("Sep 21").size());
         System.out.println(datesToIPs.get("Sep 30").size());
+    	
+    }
+    
+    @Test
+    public void mainTest9() throws IOException {
+    	LogAnalyzer la = new LogAnalyzer();
+        la.readFile("weblog2_log");
+        System.out.println("mainTest9()");
+        
+        HashMap<String, ArrayList<String>> datesToIPs = la.iPsForDays();
+        
+        System.out.println(la.dayWithMostIPVisits(datesToIPs));
+    	
+    }
+    
+    @Test
+    public void mainTest10() throws IOException {
+    	LogAnalyzer la = new LogAnalyzer();
+        la.readFile("weblog2_log ");
+        System.out.println("mainTest10()");
+        
+        HashMap<String, ArrayList<String>> datesToIPs = la.iPsForDays();
+        
+        ArrayList<String> ipsListReturn = la.iPsWithMostVisitsOnDay(datesToIPs, "Sep 29");
+       
+        for(String iP : ipsListReturn) {
+        	
+        	System.out.println(iP);
+        }
     	
     }
 
