@@ -60,6 +60,19 @@ public class CaesarCipherTest {
     @Test
     public void mainTest2() throws IOException {
     	
+    	BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module4-Java-Programming-Arrays-Lists-data\\src\\data\\titus-small_key5.txt"));
+
+    	String lines;
+    	ArrayList<String> story = new ArrayList<String>();
+    	
+    	while((lines =br.readLine()) != null)
+    	{
+    		story.add(lines);
+    	}
+    	
+    	CaesarCracker cc = new CaesarCracker('e');
+    	
+    	System.out.println(cc.decrypt(story.toString()));
     	
     }
 
