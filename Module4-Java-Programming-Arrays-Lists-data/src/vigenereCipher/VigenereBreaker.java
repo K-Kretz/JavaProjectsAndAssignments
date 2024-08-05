@@ -1,5 +1,8 @@
 package vigenereCipher;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class VigenereBreaker {
@@ -18,12 +21,36 @@ public class VigenereBreaker {
 
     public int[] tryKeyLength(String encrypted, int klength, char mostCommon) {
         int[] key = new int[klength];
-        //WRITE YOUR CODE HERE
+        
+        CaesarCracker cc = new CaesarCracker(mostCommon);
+        
+        for(int i=0; i<klength; i++)
+        {
+        	String slice = sliceString(encrypted,i,klength);
+        	key[i] = cc.getKey(slice);
+        }
+        
         return key;
     }
 
-    public void breakVigenere () {
-        //WRITE YOUR CODE HERE
+    public void breakVigenere () throws IOException {
+       
+
+    	BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module4-Java-Programming-Arrays-Lists-data\\src\\data\\titus-small.txt"));
+
+    	String lines;
+    	ArrayList<String> story = new ArrayList<String>();
+    	
+    	while((lines =br.readLine()) != null)
+    	{
+    		story.add(lines);
+    	}
+    	
+    	String trueStory ="";
+    	for(String line : story)
+    	{
+    		trueStory = trueStory+line+" ";
+    	}
     }
     
 }

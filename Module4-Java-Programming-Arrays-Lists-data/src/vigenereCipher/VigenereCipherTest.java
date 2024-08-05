@@ -88,6 +88,45 @@ public class VigenereCipherTest {
     	System.out.println(vb.sliceString("abcdefghijklm", 4, 5));
     	
     }
+    
+    @Test
+    public void mainTest3() throws IOException {
+    	
+    	BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module4-Java-Programming-Arrays-Lists-data\\src\\data\\athens_keyflute.txt"));
+
+    	String lines;
+    	ArrayList<String> story = new ArrayList<String>();
+    	
+    	while((lines =br.readLine()) != null)
+    	{
+    		story.add(lines);
+    	}
+    	
+    	String trueStory ="";
+    	for(String line : story)
+    	{
+    		trueStory = trueStory+line+" ";
+    	}
+    	
+    	VigenereBreaker vb = new VigenereBreaker();
+    	
+    	int[] key = vb.tryKeyLength(trueStory, 5, 'e');
+    	
+    	for(int num : key)
+    	{
+    		System.out.println(num);
+    	}
+    }
+    
+    @Test
+    public void mainTest4() throws IOException {
+    	
+    	
+    	VigenereBreaker vb = new VigenereBreaker();
+    	
+    	
+    	
+    }
 
     /**
      * Tears down the test fixture.
