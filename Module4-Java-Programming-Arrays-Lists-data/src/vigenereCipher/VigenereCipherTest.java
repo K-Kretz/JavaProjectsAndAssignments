@@ -63,6 +63,29 @@ public class VigenereCipherTest {
     @Test
     public void mainTest2() throws IOException {
     	
+    	BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module4-Java-Programming-Arrays-Lists-data\\src\\data\\titus-small.txt"));
+
+    	String lines;
+    	ArrayList<String> story = new ArrayList<String>();
+    	
+    	while((lines =br.readLine()) != null)
+    	{
+    		story.add(lines);
+    	}
+    	
+    	String trueStory ="";
+    	for(String line : story)
+    	{
+    		trueStory = trueStory+line+" ";
+    	}
+    	
+    	VigenereBreaker vb = new VigenereBreaker();
+    	
+    	System.out.println(vb.sliceString("abcdefghijklm", 0, 3));
+    	
+    	System.out.println(vb.sliceString("abcdefghijklm", 1, 3));
+    	
+    	System.out.println(vb.sliceString("abcdefghijklm", 4, 5));
     	
     }
 
