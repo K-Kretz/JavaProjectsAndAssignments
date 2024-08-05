@@ -124,6 +124,7 @@ public class VigenereCipherTest {
     	
     	VigenereBreaker vb = new VigenereBreaker();
     	
+    	vb.breakVigenere();
     	
     	
     }

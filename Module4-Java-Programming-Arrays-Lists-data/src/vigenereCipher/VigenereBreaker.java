@@ -36,7 +36,7 @@ public class VigenereBreaker {
     public void breakVigenere () throws IOException {
        
 
-    	BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module4-Java-Programming-Arrays-Lists-data\\src\\data\\titus-small.txt"));
+    	BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\keith\\git\\repository\\Module4-Java-Programming-Arrays-Lists-data\\src\\data\\athens_keyflute.txt"));
 
     	String lines;
     	ArrayList<String> story = new ArrayList<String>();
@@ -51,6 +51,16 @@ public class VigenereBreaker {
     	{
     		trueStory = trueStory+line+" ";
     	}
+    	
+    	int[] key = tryKeyLength(trueStory, 5, 'e');
+    	
+    	VigenereCipher vc = new VigenereCipher(key);
+    	
+    	String decryptedStory = vc.decrypt(trueStory);
+    	
+    	System.out.println(decryptedStory);
+    	
+    	
     }
     
 }
