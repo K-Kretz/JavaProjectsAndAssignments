@@ -117,7 +117,7 @@ public class EarthQuakeParser {
 		EarthQuakeParser xp = new EarthQuakeParser();
 		//String source = "data/2.5_week.atom";
 		String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
-		ArrayList<QuakeEntry> list  = xp.read(source);
+		ArrayList<QuakeEntry> list = xp.read(source);
 		Collections.sort(list);
 		for(QuakeEntry loc : list){
 			System.out.println(loc);
