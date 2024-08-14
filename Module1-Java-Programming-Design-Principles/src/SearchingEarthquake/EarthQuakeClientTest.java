@@ -65,15 +65,29 @@ class EarthQuakeClientTest {
 	/**
 	 * Test method for 
 	 */
-	@Test
-	void testCloseToMe() {
-		//fail("Not yet implemented"); // TODO
-	}
+//	@Test
+//	void testCloseToMe() {
+//		System.out.println("Testing findCloseQuakes() Method: ");
+//		EarthQuakeClient eqc = new EarthQuakeClient();
+//		eqc.closeToMe();
+//	}
 	@Test
 	void findCloseQuakes() {
 		System.out.println("Testing findCloseQuakes() Method: ");
 		EarthQuakeClient eqc = new EarthQuakeClient();
 		eqc.findCloseQuakes();
 	}
+//	@Test
+//	void testFilteredByDepth() {
+//		System.out.println("Testing findCloseQuakes() Method: ");
+//		EarthQuakeClient eqc = new EarthQuakeClient();
+//		eqc.quakesOfDepth();
+//	}
+//	@Test
+//	void testFilteredByPhrase() {
+//		System.out.println("Testing findCloseQuakes() Method: ");
+//		EarthQuakeClient eqc = new EarthQuakeClient();
+//		eqc.quakesByPhrase();
+//	}
 
 }
