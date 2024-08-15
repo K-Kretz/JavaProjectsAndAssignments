@@ -1,11 +1,10 @@
-/**
- * EarthQuakeClient Class
+/* EarthQuakeClient Class
  * 
  * Class to manipulate and store data on Earthquakes
  * 
  * Developer: Keith Kretz
  * Date Created: 8/8/2024
- * Last Updated: 8/8/2024
+ * Last Updated: 8/14/2024
  */
 
 package SearchingEarthquake;
@@ -156,11 +155,11 @@ public class EarthQuakeClient {
     	
     	EarthQuakeParser parser = new EarthQuakeParser();
     	
-    	String source = "C:\\Users\\keith\\git\\JavaProjectsAndAssignments\\Module1-Java-Programming-Design-Principles\\src\\data\\nov20quakedatasmall.atom";
+    	String source = "C:\\Users\\keith\\git\\JavaProjectsAndAssignments\\Module1-Java-Programming-Design-Principles\\src\\data\\nov20quakedata.atom";
     	
     	ArrayList<QuakeEntry> list = parser.read(source);
     	
-    	ArrayList<QuakeEntry> filteredList = filterByDepth(list,-10000.0,-5000.0);
+    	ArrayList<QuakeEntry> filteredList = filterByDepth(list,-10000.0,-8000.0);
     	for(QuakeEntry entry : filteredList)
     	{
     		System.out.println(entry);
@@ -202,23 +201,23 @@ public class EarthQuakeClient {
     	
     	EarthQuakeParser parser = new EarthQuakeParser();
     	
-    	String source = "C:\\Users\\keith\\git\\JavaProjectsAndAssignments\\Module1-Java-Programming-Design-Principles\\src\\data\\nov20quakedatasmall.atom";
+    	String source = "C:\\Users\\keith\\git\\JavaProjectsAndAssignments\\Module1-Java-Programming-Design-Principles\\src\\data\\nov20quakedata.atom";
     	
     	ArrayList<QuakeEntry> list = parser.read(source);
     	
-    	ArrayList<QuakeEntry> filteredList1 = filterByPhrase(list,"end","California");
-    	ArrayList<QuakeEntry> filteredList2 = filterByPhrase(list,"start","Explosion");
-    	ArrayList<QuakeEntry> filteredList3 = filterByPhrase(list,"any","Can");
+    	ArrayList<QuakeEntry> filteredList1 = filterByPhrase(list,"any","Creek");
+//    	ArrayList<QuakeEntry> filteredList2 = filterByPhrase(list,"start","Explosion");
+//    	ArrayList<QuakeEntry> filteredList3 = filterByPhrase(list,"any","Can");
     	
     	for(QuakeEntry entry: filteredList1)
     		System.out.println(entry);
     	System.out.println("found "+filteredList1.size());
-    	for(QuakeEntry entry: filteredList2)
-    		System.out.println(entry);
-    	System.out.println("found "+filteredList2.size());
-    	for(QuakeEntry entry: filteredList3)
-    		System.out.println(entry);
-    	System.out.println("found "+filteredList3.size());
+//    	for(QuakeEntry entry: filteredList2)
+//    		System.out.println(entry);
+//    	System.out.println("found "+filteredList2.size());
+//    	for(QuakeEntry entry: filteredList3)
+//    		System.out.println(entry);
+//    	System.out.println("found "+filteredList3.size());
     	
     	
     }

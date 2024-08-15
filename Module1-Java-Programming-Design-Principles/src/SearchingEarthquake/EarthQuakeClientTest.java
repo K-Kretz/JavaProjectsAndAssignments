@@ -5,7 +5,7 @@
  * 
  * Developer: Keith Kretz
  * Date Created: 8/8/2024
- * Last Updated: 8/8/2024 
+ * Last Updated: 8/14/2024 
  */
 package SearchingEarthquake;
 
@@ -71,23 +71,23 @@ class EarthQuakeClientTest {
 //		EarthQuakeClient eqc = new EarthQuakeClient();
 //		eqc.closeToMe();
 //	}
-	@Test
-	void findCloseQuakes() {
-		System.out.println("Testing findCloseQuakes() Method: ");
-		EarthQuakeClient eqc = new EarthQuakeClient();
-		eqc.findCloseQuakes();
-	}
+//	@Test
+//	void findCloseQuakes() {
+//		System.out.println("Testing findCloseQuakes() Method: ");
+//		EarthQuakeClient eqc = new EarthQuakeClient();
+//		eqc.findCloseQuakes();
+//	}
 //	@Test
 //	void testFilteredByDepth() {
 //		System.out.println("Testing findCloseQuakes() Method: ");
 //		EarthQuakeClient eqc = new EarthQuakeClient();
 //		eqc.quakesOfDepth();
 //	}
-//	@Test
-//	void testFilteredByPhrase() {
-//		System.out.println("Testing findCloseQuakes() Method: ");
-//		EarthQuakeClient eqc = new EarthQuakeClient();
-//		eqc.quakesByPhrase();
-//	}
+	@Test
+	void testFilteredByPhrase() {
+		System.out.println("Testing findCloseQuakes() Method: ");
+		EarthQuakeClient eqc = new EarthQuakeClient();
+		eqc.quakesByPhrase();
+	}
 
 }
