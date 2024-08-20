@@ -11,8 +11,15 @@ package SearchingEarthquake;
 
 import java.util.*;
 
+import SearchingEarthQuakeInterfaces.EarthQuakeParser;
+import SearchingEarthQuakeInterfaces.Filter;
+import SearchingEarthQuakeInterfaces.Location;
+import SearchingEarthQuakeInterfaces.MinMagFilter;
+import SearchingEarthQuakeInterfaces.QuakeEntry;
+import SearchingEarthQuakeInterfaces.minDistanceTo;
+
 public class EarthQuakeClient {
-    
+	
     public ArrayList<QuakeEntry> filterByMagnitude(ArrayList<QuakeEntry> quakeData, double magMin) {
         ArrayList<QuakeEntry> answer = new ArrayList<QuakeEntry>();
         //TODO
@@ -23,7 +30,6 @@ public class EarthQuakeClient {
         }
         return answer;              
     }
-    
     public ArrayList<QuakeEntry> filterByDistanceFrom(ArrayList<QuakeEntry> quakeData, double distMax, Location from) {      
         ArrayList<QuakeEntry> answer = new ArrayList<QuakeEntry>();
         // TODO
@@ -77,24 +83,24 @@ public class EarthQuakeClient {
         System.out.println("# quakes read: " + list.size());
     }
     
-    public void closeToMe() {
-        EarthQuakeParser parser = new EarthQuakeParser();
-        String source = "C:\\Users\\keith\\git\\JavaProjectsAndAssignments\\Module1-Java-Programming-Design-Principles\\src\\data\\nov20quakedatasmall.atom";
-        //String source = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";  
-        ArrayList<QuakeEntry> list = parser.read(source);
-        System.out.println("# quakes read: " + list.size());
-        
-        //Durham, NC
-        //Location city = new Location(35.988, -78.907);
-        //Bridgeport, CA
-        Location city = new Location(38.17, -118.82);
-        ArrayList<QuakeEntry> close = filterByDistanceFrom(list, 1000*1000, city);
-        for (QuakeEntry entry : close) {
-            double distanceInMeters = city.distanceTo(entry.getLocation());
-            System.out.println(distanceInMeters/1000 + " " + entry.getInfo());
-        }
-
-    }
+//    public void closeToMe() {
+//        EarthQuakeParser parser = new EarthQuakeParser();
+//        String source = "C:\\Users\\keith\\git\\JavaProjectsAndAssignments\\Module1-Java-Programming-Design-Principles\\src\\data\\nov20quakedatasmall.atom";
+//        //String source = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";  
+//        ArrayList<QuakeEntry> list = parser.read(source);
+//        System.out.println("# quakes read: " + list.size());
+//        
+//        //Durham, NC
+//        //Location city = new Location(35.988, -78.907);
+//        //Bridgeport, CA
+//        Location city = new Location(38.17, -118.82);
+//        ArrayList<QuakeEntry> close = filterByDistanceFrom(list, 1000*1000, city);
+//        for (QuakeEntry entry : close) {
+//            double distanceInMeters = city.distanceTo(entry.getLocation());
+//            System.out.println(distanceInMeters/1000 + " " + entry.getInfo());
+//        }
+//
+//    }
     public ArrayList<QuakeEntry> getClosest(ArrayList<QuakeEntry> quakeList, Location loc, int howMany){
 		
     	ArrayList<QuakeEntry> quakeListCopy = new ArrayList<QuakeEntry>(quakeList);
@@ -159,7 +165,7 @@ public class EarthQuakeClient {
     	
     	ArrayList<QuakeEntry> list = parser.read(source);
     	
-    	ArrayList<QuakeEntry> filteredList = filterByDepth(list,-10000.0,-8000.0);
+    	ArrayList<QuakeEntry> filteredList = filterByDepth(list,-12000.0,-10000.0);
     	for(QuakeEntry entry : filteredList)
     	{
     		System.out.println(entry);
@@ -204,20 +210,21 @@ public class EarthQuakeClient {
     	String source = "C:\\Users\\keith\\git\\JavaProjectsAndAssignments\\Module1-Java-Programming-Design-Principles\\src\\data\\nov20quakedata.atom";
     	
     	ArrayList<QuakeEntry> list = parser.read(source);
+    	System.out.println("found total:"+list.size());
     	
-    	ArrayList<QuakeEntry> filteredList1 = filterByPhrase(list,"any","Creek");
-//    	ArrayList<QuakeEntry> filteredList2 = filterByPhrase(list,"start","Explosion");
-//    	ArrayList<QuakeEntry> filteredList3 = filterByPhrase(list,"any","Can");
+//    	ArrayList<QuakeEntry> filteredList1 = filterByPhrase(list,"start","Quarry");
+//    	ArrayList<QuakeEntry> filteredList2 = filterByPhrase(list,"end","Alaska");
+    	ArrayList<QuakeEntry> filteredList3 = filterByPhrase(list,"any","Can");
     	
-    	for(QuakeEntry entry: filteredList1)
-    		System.out.println(entry);
-    	System.out.println("found "+filteredList1.size());
+//    	for(QuakeEntry entry: filteredList1)
+//    		System.out.println(entry);
+//    	System.out.println("found "+filteredList1.size());
 //    	for(QuakeEntry entry: filteredList2)
 //    		System.out.println(entry);
 //    	System.out.println("found "+filteredList2.size());
-//    	for(QuakeEntry entry: filteredList3)
-//    		System.out.println(entry);
-//    	System.out.println("found "+filteredList3.size());
+    	for(QuakeEntry entry: filteredList3)
+    		System.out.println(entry);
+    	System.out.println("found "+filteredList3.size());
     	
     	
     }

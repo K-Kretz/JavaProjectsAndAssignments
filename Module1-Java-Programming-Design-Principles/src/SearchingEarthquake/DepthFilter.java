@@ -1,4 +1,4 @@
-package SearchingEarthQuakeInterfaces;
+package SearchingEarthquake;
 
 public class DepthFilter implements Filter {
 	
@@ -14,12 +14,6 @@ public class DepthFilter implements Filter {
 	@Override
 	public boolean satisfies(QuakeEntry entry) {
 		return (entry.getDepth()>=min &&entry.getDepth()<=max);
-	}
-
-	@Override
-	public String getName() {
-		
-		return "DepthFilter";
 	}
 
 }

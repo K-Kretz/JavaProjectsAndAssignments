@@ -47,12 +47,12 @@ class EarthQuakeClientTest {
 	/**
 	 * Test method for 
 	 */
-//	@Test
-//	void testBigQuakes() {
-//		System.out.println("Testing bigQuakes() Method: ");
-//		EarthQuakeClient eqc = new EarthQuakeClient();
-//		eqc.bigQuakes();
-//	}
+	@Test
+	void testBigQuakes() {
+		System.out.println("Testing bigQuakes() Method: ");
+		EarthQuakeClient eqc = new EarthQuakeClient();
+		eqc.bigQuakes();
+	}
 
 	/**
 	 * Test method for 
@@ -83,11 +83,11 @@ class EarthQuakeClientTest {
 //		EarthQuakeClient eqc = new EarthQuakeClient();
 //		eqc.quakesOfDepth();
 //	}
-	@Test
-	void testFilteredByPhrase() {
-		System.out.println("Testing findCloseQuakes() Method: ");
-		EarthQuakeClient eqc = new EarthQuakeClient();
-		eqc.quakesByPhrase();
-	}
+//	@Test
+//	void testFilteredByPhrase() {
+//		System.out.println("Testing quakesByPhrase() Method: ");
+//		EarthQuakeClient eqc = new EarthQuakeClient();
+//		eqc.quakesByPhrase();
+//	}
 
 }

@@ -60,7 +60,7 @@ public class EarthQuakeClient {
 		
 		ArrayList<QuakeEntry> list = parser.read(source);
 		
-		Filter f = new minMagFilter(4.0);
+		Filter f = new MinMagFilter(4.0);
 		ArrayList<QuakeEntry> listminMag = filteredList(list,f);
 		
 		Location city = new Location(38.17, -118.82);

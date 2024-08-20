@@ -1,10 +1,10 @@
 package SearchingEarthQuakeInterfaces;
 
-public class minMagFilter implements Filter {
+public class MinMagFilter implements Filter {
 
 	private double minMag;
 	
-	public minMagFilter(double min) {
+	public MinMagFilter(double min) {
 		minMag = min;
 	}
 	
@@ -12,5 +12,11 @@ public class minMagFilter implements Filter {
 	public boolean satisfies(QuakeEntry entry) {
 		
 		return entry.getMagnitude() >= minMag;
+	}
+	
+	@Override
+	public String getName() {
+		
+		return "MinMagFilter";
 	}
 }

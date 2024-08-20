@@ -14,5 +14,10 @@ public class minDistanceTo implements Filter {
 	public boolean satisfies(QuakeEntry entry) {
 		return (entry.getLocation().distanceTo(myLoc) < maxDist);
 	}
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

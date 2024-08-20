@@ -26,4 +26,12 @@ public class MatchAllFilter implements Filter {
 		return true;	
 	}
 
+	@Override
+	public String getName() {
+		String name ="";
+		for(Filter f : filters)
+			name = name + " " + f.getName();
+	
+		return "Filters used: " + name;
+	}
 }
