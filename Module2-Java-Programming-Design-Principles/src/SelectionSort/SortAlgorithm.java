@@ -24,7 +24,6 @@ public SortAlgorithm(ArrayList<Double> inList){
 		outList.add(minElement);
 	}
 }
-
 private double getSmallest(ArrayList<Double> list) {
 	
 	double min = list.get(0);
