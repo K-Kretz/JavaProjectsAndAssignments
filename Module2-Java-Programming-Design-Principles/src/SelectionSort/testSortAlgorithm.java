@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-class testImplementingSelectionSort {
+class testSortAlgorithm {
 
 	@Test
 	void testImplementingSelectionSort() {
@@ -27,10 +27,11 @@ class testImplementingSelectionSort {
 		list.add(5.5);
 		list.add(4.4);
 		
-		ImplementingSelectionSort iss = new ImplementingSelectionSort(list);
+		SortAlgorithm iss = new SortAlgorithm(list);
 
 		for(double d : iss.getList())
 			System.err.println(d);
 	}
 
 }
+

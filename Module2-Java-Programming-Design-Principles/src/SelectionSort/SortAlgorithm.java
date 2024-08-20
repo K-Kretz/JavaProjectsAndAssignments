@@ -11,11 +11,11 @@ package SelectionSort;
 
 import java.util.ArrayList;
 
-public class ImplementingSelectionSort {
+public class SortAlgorithm {
 	
 private ArrayList<Double> outList = new ArrayList<Double>();	
 	
-public ImplementingSelectionSort(ArrayList<Double> inList){
+public SortAlgorithm(ArrayList<Double> inList){
 	
 	while(!inList.isEmpty()) 
 	{
