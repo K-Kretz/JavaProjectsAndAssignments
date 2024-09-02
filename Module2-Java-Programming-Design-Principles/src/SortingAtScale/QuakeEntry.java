@@ -43,18 +43,23 @@ public class QuakeEntry implements Comparable<QuakeEntry>{
 
 	@Override
 	public int compareTo(QuakeEntry loc) {
-		double difflat = myLocation.getLatitude() - loc.myLocation.getLatitude();
-		if (Math.abs(difflat) < 0.001) {
-			double diff = myLocation.getLongitude() - loc.myLocation.getLongitude();
-			if (diff < 0) return -1;
-			if (diff > 0) return 1;
-			return 0;
-		}
-		if (difflat < 0) return -1;
-		if (difflat > 0) return 1;
+//		double difflat = myLocation.getLatitude() - loc.myLocation.getLatitude();
+//		if (Math.abs(difflat) < 0.001) {
+//			double diff = myLocation.getLongitude() - loc.myLocation.getLongitude();
+//			if (diff < 0) return -1;
+//			if (diff > 0) return 1;
+//			return 0;
+//		}
+//		if (difflat < 0) return -1;
+//		if (difflat > 0) return 1;
+		int result = Double.compare(magnitude, loc.getMagnitude());
 		
+		if(result == 0)
+		{
+			return Double.compare(depth, loc.getDepth());
+		}
 		// never reached
-		return 0;
+		return result;
 	}
 	
 	public String toString(){
