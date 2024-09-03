@@ -6,10 +6,20 @@ import org.junit.jupiter.api.Test;
 
 class testDifferentSorters {
 
+//	@Test
+//	void testSortWithCompareTo() {
+//		DifferentSorters ds = new DifferentSorters();
+//		ds.sortWithCompareTo();
+//	}
+//	@Test
+//	void testsorByTitleAndDepth() {
+//		DifferentSorters ds = new DifferentSorters();
+//		ds.sorByTitleAndDepth();
+//	}
 	@Test
-	void testSortWithCompareTo() {
+	void testsortByLastWordInTitleThenByMagnitude() {
 		DifferentSorters ds = new DifferentSorters();
-		ds.sortWithCompareTo();
+		ds.sortByLastWordInTitleThenByMagnitude();
 	}
 
 //	@Test
