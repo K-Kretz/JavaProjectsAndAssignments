@@ -12,13 +12,13 @@ class testEarthquakeSort {
 	void testGetSmallestMag() {
 		EarthQuakeParser parser = new EarthQuakeParser();
 		
-		String source = "C:\\Users\\keith\\git\\JavaProjectsAndAssignments\\Module2-Java-Programming-Design-Principles\\src\\data\\nov20quakedatasmall.atom";
+		String source = "C:\\Users\\keith\\git\\JavaProjectsAndAssignments\\Module2-Java-Programming-Design-Principles\\src\\data\\earthQuakeDataDec6sample2.atom";
 		
 		ArrayList<QuakeEntry> list = parser.read(source);
 		
-		EarthquakeSort es = new EarthquakeSort();
+		QuakeSortInPlace es = new QuakeSortInPlace();
 		
-		es.getSmallestMag(list);
+		es.sortByMagnitudeWithBubbleSortWithCheck(list);
 		
 		for(QuakeEntry entry : list)
 			System.out.println(entry);
