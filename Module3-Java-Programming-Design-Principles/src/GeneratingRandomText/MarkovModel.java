@@ -10,7 +10,9 @@ package GeneratingRandomText;
 import java.util.*;
 import java.util.Random;
 
-public class MarkovModel {
+import AbstractGeneratingRandomText.IMarkovModel;
+
+public class MarkovModel{
     private String myText;
     private Random myRandom;
     private int model;
@@ -27,7 +29,6 @@ public class MarkovModel {
     public void setTraining(String s){
         myText = s.trim();
     }
-    
     public String getRandomText(int numChars){
         
          if(myText==null)

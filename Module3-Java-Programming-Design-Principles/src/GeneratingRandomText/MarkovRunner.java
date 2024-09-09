@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.Random;
 
+import AbstractGeneratingRandomText.IMarkovModel;
+
 public class MarkovRunner {
     public void runMarkovZero() throws IOException {
         FileResource fr = new FileResource();
@@ -23,7 +25,6 @@ public class MarkovRunner {
             printOut(text);
         }
     }
-    
     public void runMarkovOne() throws IOException {
         FileResource fr = new FileResource();
         String st = fr.asString();

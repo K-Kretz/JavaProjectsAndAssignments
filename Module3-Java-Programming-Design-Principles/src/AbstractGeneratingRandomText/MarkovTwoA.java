@@ -1,4 +1,4 @@
-package GeneratingRandomText;
+package AbstractGeneratingRandomText;
 
 
 /**
@@ -12,23 +12,15 @@ import java.util.Random;
 
 import AbstractGeneratingRandomText.AbstractMarkovModel;
 
-public class MarkovTwo{
-    private String myText;
-    private Random myRandom;
-    
-    public MarkovTwo() {
-        myRandom = new Random();
-    }
-    
-    public void setRandom(int seed){
+public class MarkovTwoA extends AbstractMarkovModel{
+   
+    public void setRandom(int seed)
+    {
         myRandom = new Random(seed);
     }
     
-    public void setTraining(String s){
-        myText = s.trim();
-    }
-    
-    public String getRandomText(int numChars){
+    public String getRandomText(int numChars)
+    {
         
          if(myText==null)
             return "";
@@ -53,23 +45,4 @@ public class MarkovTwo{
         return sb.toString();
     }
     
-    private ArrayList<String> getFollows(String key){
-    
-        ArrayList<String> follows = new ArrayList<String>();
-        int pos = 0;
-        while(pos < myText.length())
-        {
-            int start = myText.indexOf(key,pos);
-            if(start ==-1)
-                break;
-            if(start + key.length() >= myText.length()-1)
-                break;
-            String next = myText.substring(start+key.length(), start+key.length()+1);
-            follows.add(next);
-            pos = start+key.length();
-        }
-        
-        return follows;
-    }
-
 }
