@@ -14,11 +14,6 @@ import AbstractGeneratingRandomText.AbstractMarkovModel;
 
 public class MarkovTwoA extends AbstractMarkovModel{
    
-    public void setRandom(int seed)
-    {
-        myRandom = new Random(seed);
-    }
-    
     public String getRandomText(int numChars)
     {
         
@@ -44,5 +39,10 @@ public class MarkovTwoA extends AbstractMarkovModel{
         }   
         return sb.toString();
     }
+
+	@Override
+	public String toString() {
+		return "MarkovModel of order 2";
+	}
     
 }

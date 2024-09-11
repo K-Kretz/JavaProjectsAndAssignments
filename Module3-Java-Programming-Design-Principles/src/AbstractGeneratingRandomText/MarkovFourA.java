@@ -42,4 +42,9 @@ public class MarkovFourA extends AbstractMarkovModel
         }   
         return sb.toString();
     }
+
+	@Override
+	public String toString() {
+		return "MarkovModel of order 4";
+	}
 }

@@ -23,7 +23,7 @@ class Tester {
 	@Test
 	void testRunMarkovZero() throws IOException {
 		MarkovRunnerWithInterface mrwi = new MarkovRunnerWithInterface();
-		mrwi.runMarkov();
+		mrwi.testHashMap();
 	}
 
 }

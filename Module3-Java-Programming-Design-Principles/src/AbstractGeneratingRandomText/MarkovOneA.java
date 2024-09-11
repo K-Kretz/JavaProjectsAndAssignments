@@ -12,11 +12,6 @@ import java.util.Random;
 
 public class MarkovOneA extends AbstractMarkovModel{
 
-    public void setRandom(int seed)
-    {
-        myRandom = new Random(seed);
-    }
-    
     public String getRandomText(int numChars)
     {
         if(myText==null)
@@ -40,5 +35,10 @@ public class MarkovOneA extends AbstractMarkovModel{
         }   
         return sb.toString();
     }
+
+	@Override
+	public String toString() {
+		return "MarkovModel of order 1";
+	}
 }
 

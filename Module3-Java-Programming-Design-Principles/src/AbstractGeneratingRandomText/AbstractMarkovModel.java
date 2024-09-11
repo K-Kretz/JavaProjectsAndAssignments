@@ -14,7 +14,12 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
     public void setTraining(String s) {
         myText = s.trim();
     }
- 
+    
+    public void setRandom(int seed)
+    {
+        myRandom = new Random(seed);
+    }
+    
     abstract public String getRandomText(int numChars);
     
     protected ArrayList<String> getFollows(String key)
@@ -34,5 +39,7 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
         }
         return follows;
     }
+    
+    public abstract String toString();
 
 }
