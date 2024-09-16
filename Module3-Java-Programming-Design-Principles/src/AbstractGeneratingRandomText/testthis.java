@@ -7,8 +7,9 @@ import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
 import AbstractGeneratingRandomText.MarkovRunnerWithInterface;
+import GeneratingRandomText.MarkovRunner;
 
-class testThis {
+class testthis {
 
 //	@Test
 //	void testRunMarkovZero() throws IOException {
@@ -18,7 +19,7 @@ class testThis {
 //	@Test
 //	void testRunMarkovZero() throws IOException {
 //		MarkovRunner mr = new MarkovRunner();
-//		mr.runMarkovZero();
+//		mr.runMarkovModel();
 //	}
 	@Test
 	void testRunMarkovZero() throws IOException {
