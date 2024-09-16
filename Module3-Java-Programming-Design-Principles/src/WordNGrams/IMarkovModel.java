@@ -1,0 +1,10 @@
+package WordNGrams;
+
+import java.util.Random;
+
+public interface IMarkovModel {
+
+	public void setTraining(String text);
+    public void setRandom(int seed);
+	public String getRandomText(int numChars);
+}

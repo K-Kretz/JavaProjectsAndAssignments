@@ -67,8 +67,8 @@ public class MarkovRunnerWithInterface {
 		String st = fr.asString();
 		st = st.replace('\n', ' ');
 		
-	     EfficientMarkovModel emm = new EfficientMarkovModel(5);
-	     runModel(emm,st,50,4615);
+	     EfficientMarkovModel emm = new EfficientMarkovModel(6);
+	     runModel(emm,st,50,792);
 	}
     
     public void runMarkov() throws IOException {

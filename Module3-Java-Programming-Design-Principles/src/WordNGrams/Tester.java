@@ -1,4 +1,4 @@
-package GeneratingRandomText;
+package WordNGrams;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,14 +16,19 @@ class Tester {
 //		mr.runMarkovZero();
 //	}
 //	@Test
-	void testRunMarkovZero() throws IOException {
-		MarkovRunner mr = new MarkovRunner();
-		mr.testGetFollows();
-	}
+//	void testRunMarkovZero() throws IOException {
+//		MarkovRunner mr = new MarkovRunner();
+//		mr.runMarkovZero();
+//	}
 //	@Test
 //	void testRunMarkovZero() throws IOException {
-//		MarkovRunnerWithInterface mrwi = new MarkovRunnerWithInterface();
+//		MarkovRunner mrwi = new MarkovRunner();
 //		mrwi.runMarkov();
 //	}
+	@Test
+	void testHashCodeMarkovWord() throws IOException {
+		MarkovRunner mrwi = new MarkovRunner();
+		mrwi.runMarkov();
+	}
 
 }

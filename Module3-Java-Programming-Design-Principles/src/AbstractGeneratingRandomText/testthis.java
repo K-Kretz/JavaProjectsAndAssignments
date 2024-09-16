@@ -1,4 +1,4 @@
-package GeneratingRandomText;
+package AbstractGeneratingRandomText;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import AbstractGeneratingRandomText.MarkovRunnerWithInterface;
 
-class Tester {
+class testThis {
 
 //	@Test
 //	void testRunMarkovZero() throws IOException {
@@ -16,14 +16,14 @@ class Tester {
 //		mr.runMarkovZero();
 //	}
 //	@Test
-	void testRunMarkovZero() throws IOException {
-		MarkovRunner mr = new MarkovRunner();
-		mr.testGetFollows();
-	}
-//	@Test
 //	void testRunMarkovZero() throws IOException {
-//		MarkovRunnerWithInterface mrwi = new MarkovRunnerWithInterface();
-//		mrwi.runMarkov();
+//		MarkovRunner mr = new MarkovRunner();
+//		mr.runMarkovZero();
 //	}
+	@Test
+	void testRunMarkovZero() throws IOException {
+		MarkovRunnerWithInterface mrwi = new MarkovRunnerWithInterface();
+		mrwi.testHashMap();
+	}
 
 }
