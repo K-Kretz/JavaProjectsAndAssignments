@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://www.dukelearntoprogram.com//course1/common/js/image/SimpleImage.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript" src="./index.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>Paint Your Own Picture</h1>
+
+	<p>
+		Set Width: <input type="text" onchange="setWidth(this.value)"> Set Height: <input type="text" onchange="setHeight(this.value)">
+	</p>
+
+	<canvas id="canvas1" onmousedown="startPaint()" onmousemove="doPaint(event.offsetX,event.offsetY)" onmouseup="endPaint()">
+		
+	</canvas>
+
+	<p>
+		Brush Color: <input type="color" value="#000" onchange="SetColor(this.value)">
+	</p>
+
+</body>
+</html>
